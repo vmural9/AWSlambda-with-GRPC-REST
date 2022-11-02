@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+service lambda {
+  rpc logsearch (call) returns (response) {}
+}
+
+//Request parameters for the lambda function-logsearch
+message call {
+  string timestamp = 1;
+  string interval = 2;
+}
+
+//A string with the response which contains the HTTP code and the hashed log message.
+message response {
+  string result = 1;
+}
